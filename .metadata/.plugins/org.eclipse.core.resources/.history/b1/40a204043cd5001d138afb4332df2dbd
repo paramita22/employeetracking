@@ -1,0 +1,36 @@
+package in.employee_tracking.controller;
+
+import org.hibernate.service.Service;
+
+import in.employee_tracking.Model.Employee;
+import in.employee_tracking.factory.EmployeeServiceFactory;
+
+public class EmployeeControllerImpl implements IEmployeeController{
+
+	IEmployeeService employeeService;
+
+	@Override
+	public String save(Employee employee) {
+		empService = EmployeeServiceFactory.getEmployeeService();
+		return Service.save(employee);
+	}
+
+	@Override
+	public Student findById(Integer Empid) {
+		empService = EmployeeServiceFactory.getStudentService();
+		return empService.findById(Empid);
+	}
+
+	@Override
+	public String updateById(Employee employee) {
+		empService = EmployeeServiceFactory.getEmployeeService();
+		return empService.updateById(employee);
+	}
+
+	@Override
+	public String deleteById(Integer Empid) {
+		empService = EmployeeServiceFactory.getEmployeeService();
+		return empService.deleteById(Empid);
+	}
+	
+}

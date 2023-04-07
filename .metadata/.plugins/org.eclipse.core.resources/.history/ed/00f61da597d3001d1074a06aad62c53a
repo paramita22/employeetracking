@@ -1,0 +1,45 @@
+package in.employee_tracking.main;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import in.employee_tracking.Model.Address;
+import in.employee_tracking.Model.Employee;
+import in.employee_tracking.util.HibernateUtil;
+
+public class InsertEmployee {
+
+	public static void main(String[] args) {
+		Session session = null;
+		Transaction transaction = null;
+		boolean flag = false;
+
+	
+			session = HibernateUtil.getSession();
+
+			if (session != null)
+				transaction = session.beginTransaction();
+			
+			Address address1=new Address();
+			address1.setZip_code("700016");
+			address1.setStreet("ParkStreet");
+			address1.setCity("Kolkata");
+			address1.setState("West Bengal");
+			address1.setCountry("India");
+			
+
+			Employee e1=new Employee(102,"Boban","DataSciencePortal",address1);
+
+				session.save(e1);
+				flag = true;
+				
+				if(flag==true)
+				transaction.commit();
+			else
+				transaction.rollback();
+			
+			HibernateUtil.closeSession(session);
+			HibernateUtil.closeSessionFactory();
+		}
+
+}

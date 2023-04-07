@@ -1,0 +1,33 @@
+package in.employee_tracking.controller;
+
+import in.employee_tracking.factory.EmployeeServiceFactory;
+
+public class EmployeeControllerImpl {
+
+	IEmployeeService stdService;
+
+	@Override
+	public String save(Employee employee) {
+		empService = EmployeeServiceFactory.getEmployeeService();
+		return empService.save(employee);
+	}
+
+	@Override
+	public Student findById(Integer Empid) {
+		empService = StudentServiceFactory.getStudentService();
+		return empService.findById(Empid);
+	}
+
+	@Override
+	public String updateById(Employee employee) {
+		empService = EmployeetServiceFactory.getEmployeeService();
+		return empService.updateById(employee);
+	}
+
+	@Override
+	public String deleteById(Integer Empid) {
+		empService = EmployeeServiceFactory.getEmployeeService();
+		return empService.deleteById(Empid);
+	}
+	
+}

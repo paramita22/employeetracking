@@ -1,0 +1,16 @@
+package in.employee_tracking.factory;
+
+public class EmployeeServiceFactory {
+
+	private static IEmployeeService employeeServiceImpl ;
+
+	private EmployeeServiceFactory() {
+	}
+
+	public static  IEmployeeService getEmployeeService() {
+		if (employeeServiceImpl == null)
+			employeeServiceImpl = new EmployeeServiceImpl();
+
+		return employeeDao;
+	}
+}

@@ -1,0 +1,5 @@
+package in.employee_tracking.controller;
+
+public interface IEmployeeController {
+
+}

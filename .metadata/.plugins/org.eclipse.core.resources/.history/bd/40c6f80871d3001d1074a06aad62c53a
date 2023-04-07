@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="in.employee_trackihng.Model.Manager" table="manager">
+		<id name="departmentid" type="java.lang.Integer" column="departmentid" >
+			<generator class="increment"/>
+		</id>
+		<property name="employee_name" type="java.lang.String"
+			column="employee_name" />
+		<property name="project_name" type="java.lang.String" column="project_name" />
+		<property name="employee_address" type="java.lang.String" column="employee_address" />
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+package in.employee_tracking.service;
+
+import in.employee_tracking.factory.IEmployeeService;
+
+public class EmployeeServiceImpl implements IEmployeeService {
+
+}
