@@ -1,0 +1,11 @@
+package in.employee_tracking.factory;
+
+import in.employee_tracking.dao.IAddressDao;
+import in.employee_tracking.dao.IEmployeeDao;
+
+public class AddressDaoFactory {
+
+	public static IAddressDao getAddressDao() {
+		return null;
+	}
+}

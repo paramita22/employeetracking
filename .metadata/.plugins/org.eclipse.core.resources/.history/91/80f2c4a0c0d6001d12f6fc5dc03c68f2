@@ -1,0 +1,36 @@
+package in.employee_tracking.controller;
+
+import org.hibernate.service.Service;
+
+import in.employee_tracking.Model.Address;
+import in.employee_tracking.factory.AddressServiceFactory;
+
+public class AddressControllerImpl implements IAddressController{
+
+	IEmployeeService empService;
+
+	@Override
+	public String deleteById(Integer Empid) {
+		addressService = AddressServiceFactory.getEmployeeService();
+		return empService.deleteById(Empid);
+	}
+
+	@Override
+	public String save1(Address address) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateById(Integer Empid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String findById(Integer Empid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

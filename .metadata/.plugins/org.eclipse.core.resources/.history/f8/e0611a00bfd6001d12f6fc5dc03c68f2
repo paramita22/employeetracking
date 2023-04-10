@@ -1,0 +1,10 @@
+package in.employee_tracking.dao;
+
+public class IAddressDao {
+
+	public String deleteById(Integer empid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

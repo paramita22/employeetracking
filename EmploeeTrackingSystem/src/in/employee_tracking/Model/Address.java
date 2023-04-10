@@ -1,28 +1,76 @@
 package in.employee_tracking.Model;
 
+import javax.persistence.Access;
+
+import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="address")
+@Access(value=AccessType.PROPERTY)
 public class Address {
 		
-		@Id
-		private String zip_code;
-		private String street;
-		private String city;
-		private String state;
-		private String country;
-		
-		
+		@Column(name = "Empid",nullable=false)
+		public static int Empid;
 
-		public String getZip_code() {
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		@Column(name = "zip_code")
+		protected static int zip_code;
+		
+		@Column(name="street")
+		protected static String street;
+		
+		@Column(name = "city")
+		protected static String city;
+		
+		@Column(name="state")
+		protected static String state;
+		
+		@Column(name="country")
+		protected static String country;
+		
+		static {
+			System.out.println("Employee View Begins...");
+		}
+
+		public Address() {
+			System.out.println("CRUD operation on employee");
+		}
+
+		
+		
+		@OneToOne
+		@PrimaryKeyJoinColumn
+		public Employee employee;
+
+		
+		public int getEmpid() {
+			return Empid;
+		}
+
+
+
+		public void setEmpid(int Empid) {
+			Employee.Empid = Empid;
+		}
+
+		
+		public int getZip_code() {
 			return zip_code;
 		}
 
 
 
-		public void setZip_code(String zip_code) {
-			this.zip_code = zip_code;
+		public void setZip_code(int zip_code) {
+			Address.zip_code = zip_code;
 		}
 
 
@@ -34,7 +82,7 @@ public class Address {
 
 
 		public void setStreet(String street) {
-			this.street = street;
+			Address.street = street;
 		}
 
 
@@ -46,7 +94,7 @@ public class Address {
 
 
 		public void setCity(String city) {
-			this.city = city;
+			Address.city = city;
 		}
 
 
@@ -58,7 +106,7 @@ public class Address {
 
 
 		public void setState(String state) {
-			this.state = state;
+			Address.state = state;
 		}
 
 
@@ -70,7 +118,7 @@ public class Address {
 
 
 		public void setCountry(String country) {
-			this.country = country;
+			Address.country = country;
 		}
 
 
@@ -79,6 +127,10 @@ public class Address {
 		public String toString() {
 			return "Address [zip_code=" + zip_code + ", street=" + street + ", city=" +city + ", state=" + state + ", country=" +country+"]";
 		}
+
+
+
+		
 
 	}
 

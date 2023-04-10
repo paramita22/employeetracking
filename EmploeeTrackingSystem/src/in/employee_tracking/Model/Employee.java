@@ -1,18 +1,30 @@
 package in.employee_tracking.Model;
 
+	import javax.persistence.Access;
+	import javax.persistence.AccessType;
 	import javax.persistence.Column;
 
 
+
 	import javax.persistence.Entity;
+	import javax.persistence.GeneratedValue;
+	import javax.persistence.GenerationType;
 	import javax.persistence.Id;
+	import javax.persistence.OneToOne;
 	import javax.persistence.Table;
+
+	import org.hibernate.annotations.Cascade;
+
 
 	@Entity
 	@Table(name = "employee")
+	@Access(value=AccessType.PROPERTY)
 	public class Employee{
+		
 		@Id
-		@Column(name = "Empid")
-		protected static Integer Empid;
+		@Column(name="Empid")
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		public static int Empid;
 
 		@Column(name = "employee_name")
 		protected static String employee_name;
@@ -58,6 +70,8 @@ package in.employee_tracking.Model;
 			System.out.println("Employee.setProjectName()");
 		}
 		
+		@OneToOne(mappedBy="employee")
+		@Cascade(value=org.hibernate.annotations.CascadeType.ALL)
 		public Address getEmployeeAddress() {
 			return employee_address;
 		}
@@ -69,7 +83,7 @@ package in.employee_tracking.Model;
 
 		@Override
 		public String toString() {
-			return "Employee [empId=" + Empid + ", empName=" + employee_name + "empaddress="+employee_address+"]";
+			return "Employee [EmpId=" + Empid + ", empName=" + employee_name + "empaddress="+employee_address+"]";
 		}
 
 	}

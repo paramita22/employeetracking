@@ -1,0 +1,17 @@
+package in.employee_tracking.factory;
+public class EmployeeDaoFactory {
+
+	public static in.employee_tracking.dao.IEmployeeDao getEmployeeDao() {
+		private static IEmployeeDao employeeDao = null;
+
+		private EmployeeDaoFactory() {
+		}
+
+		public static  IEmployee getStudentDao() {
+			if (employeeDao == null)
+				employeeDao = new EmployeeDaoImpl();
+
+			return employeeDao;
+	}
+
+}

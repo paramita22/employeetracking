@@ -1,0 +1,20 @@
+package in.employee_tracking.factory;
+
+import in.employee_tracking.controller.EmployeeControllerImpl;
+import in.employee_tracking.controller.IAddressController;
+import in.employee_tracking.controller.IEmployeeController;
+
+public class AddressControllerfactory {
+
+	
+	private static IAddressController addressController = null;
+
+	public static IAddressController getAddressController() {
+
+		if (addressController == null)
+			addressController = new addressControllerImpl();
+
+		return addressController;
+
+	}
+}

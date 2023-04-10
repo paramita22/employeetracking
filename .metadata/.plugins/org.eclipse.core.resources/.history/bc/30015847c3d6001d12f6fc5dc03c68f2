@@ -1,0 +1,10 @@
+package in.employee_tracking.factory;
+
+public class AddressServiceFactory {
+
+	public static Object getAddressService() {
+		
+		return null;
+	}
+
+}

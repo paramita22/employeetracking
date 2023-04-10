@@ -8,7 +8,7 @@ public interface IEmployeeController {
 
 		Employee findById(Integer Empid);// Reading a record
 
-		String updateById(Employee employee);// Updating a record
+		String updateById(Employee employeeRecord);// Updating a record
 
 		String deleteById(Integer Empid);// Deleting a record
 

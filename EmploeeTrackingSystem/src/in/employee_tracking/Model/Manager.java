@@ -11,7 +11,7 @@ public class Manager extends Employee{
 	
 		public Manager(int Empid, String employee_name, String project_name, Address employee_address) {
 		super(Empid, employee_name, project_name, employee_address);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 
@@ -20,7 +20,7 @@ public class Manager extends Employee{
 
 		private String Project_name;
 		private String Department_name;
-		private String NoIndReport;
+		private int NoIndReport;
 		private String Timesheet_begin;
 		private String Timesheet_end;
 		
@@ -28,7 +28,7 @@ public class Manager extends Employee{
 
 		public Manager() {
 			super(Empid,employee_name,project_name,employee_address);
-			// TODO Auto-generated constructor stub
+			
 		}
 
 
@@ -65,7 +65,7 @@ public class Manager extends Employee{
 
 
 
-		public String getNoIndReport() {
+		public int getNoIndReport() {
 			return NoIndReport;
 		}
 
@@ -73,8 +73,8 @@ public class Manager extends Employee{
 
 
 
-		public void setNoIndReport(String NoIndReport) {
-			this.NoIndReport = NoIndReport;
+		public void setNoIndReport(int noIndReport) {
+			this.NoIndReport = noIndReport;
 		}
 
 

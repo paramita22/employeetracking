@@ -24,23 +24,17 @@ public class HibernateUtil {
 	}
 
 	public static Session getSession() {
-		if (session == null)
+		if (session != null)
 			session = sessionFactory.openSession();
 		return session;
 	}
 
+	@SuppressWarnings("null")
 	public static void closeSession(Session session) {
-		if (session != null) {
+		if (session == null) {
 			session.close();
 		}
 	}
-
-	public static void closeSessionFactory() {
-		if (sessionFactory != null) {
-			sessionFactory.close();
-		}
-	}
-	
 	public static void startUp() {
 		System.out.println("****Starting hibernate enivornment.....");
 	}

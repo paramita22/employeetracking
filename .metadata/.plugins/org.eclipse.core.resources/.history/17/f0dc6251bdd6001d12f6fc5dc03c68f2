@@ -1,0 +1,12 @@
+package in.employee_tracking.factory;
+
+import in.employee_tracking.dao.IEmployeeDao;
+
+public class AddressDaoFactory {
+
+	public static IEmployeeDao getAddressDao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

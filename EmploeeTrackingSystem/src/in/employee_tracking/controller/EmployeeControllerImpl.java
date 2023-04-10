@@ -1,6 +1,5 @@
 package in.employee_tracking.controller;
 
-import org.hibernate.service.Service;
 
 import in.employee_tracking.Model.Employee;
 import in.employee_tracking.factory.EmployeeServiceFactory;
