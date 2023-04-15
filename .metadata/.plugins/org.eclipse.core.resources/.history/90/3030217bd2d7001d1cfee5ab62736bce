@@ -1,0 +1,114 @@
+package in.employee_tracking.Model;
+
+import javax.persistence.Entity;
+
+
+@Entity
+public class manager1 extends employee1{
+
+
+
+		public manager1(Integer Empid,String Project_name,String TimeSheet_end,address1 address){
+			super(Empid, employee_name,project_name, address);
+			System.out.println("Manager class is Loading...");
+		}
+
+
+
+		
+
+		private String Project_name;
+		private String Department_name;
+		private int NoIndReport;
+		private String Timesheet_begin;
+		private String Timesheet_end;
+
+
+
+		public String getProject_name() {
+			return Project_name;
+		}
+
+
+
+
+
+		public void setProject_name(String Project_name) {
+			this.Project_name = Project_name;
+		}
+
+
+
+
+
+		public String getDepartment_name() {
+			return Department_name;
+		}
+
+
+
+
+
+		public void setDepartment_name(String Department_name) {
+			this.Department_name = Department_name;
+		}
+
+
+
+
+
+		public int getNoIndReport() {
+			return NoIndReport;
+		}
+
+
+
+
+
+		public void setNoIndReport(int noIndReport) {
+			this.NoIndReport = noIndReport;
+		}
+
+
+
+
+
+		public String getTimesheet_begin() {
+			return Timesheet_begin;
+		}
+
+
+
+
+
+		public void setTimesheet_begin(String Timesheet_begin) {
+			this.Timesheet_begin = Timesheet_begin;
+		}
+
+
+
+
+
+		public String getTimesheet_end() {
+			return Timesheet_end;
+		}
+
+
+
+
+
+		public void setTimesheet_end(String timesheet_end) {
+			this.Timesheet_end = timesheet_end;
+		}
+
+
+
+
+
+		@Override
+		public String toString() {
+			return "manager1 [Project_name=" + Project_name + ", Department_name=" + Department_name + ", NoIndReport=" +NoIndReport + ", Timesheet_begin=" + Timesheet_begin + ", Timesheet_end=" +Timesheet_end+"]";
+		}
+
+	}
+

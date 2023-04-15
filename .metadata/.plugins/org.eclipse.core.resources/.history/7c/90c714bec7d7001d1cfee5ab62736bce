@@ -1,0 +1,17 @@
+package in.employee_tracking.controller;
+
+import in.employee_tracking.Model.employee;
+
+public interface IEmployeeController {
+
+		String save(employee employee);// Creating a record
+
+		employee findById(Integer Empid);// Reading a record
+
+		String updateById(employee employeeRecord);// Updating a record
+
+		String deleteById(Integer Empid);// Deleting a record
+
+	}
+
+

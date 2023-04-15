@@ -1,0 +1,93 @@
+package in.employee_tracking.Model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class employee1 implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	public static int Empid;
+	
+	@Column
+	private static String employee_name;
+	
+	@Column
+	private static String Project_name;
+	
+	@Column
+	static address1 employee_address=new address1(Empid);
+
+	public static String setProject_name;
+
+	static {
+		System.out.println("Employee.class is loading...");
+	}
+
+	public employee1(Integer Empid, String employee_name, String project_name, address1 employee_address) {
+		System.out.println("Initialising parametrized constructor for HAS-A relationship with address1 class");
+	}
+
+		public static Integer getEmpid() {
+			return Empid;
+		}
+
+		public void setEmpid(Integer Empid) {
+			employee1.Empid = Empid;
+		}
+
+		public static String getEmployee_name() {
+			return employee_name;
+		}
+
+		public void setEmployee_name(String employee_name) {
+			employee1.employee_name = employee_name;
+		}
+
+		public String getProject_name() {
+			return Project_name;
+		}
+
+		public void setProject_name(String project_name) {
+			Project_name = project_name;
+		}
+
+	
+		
+		
+		public address1 getEmployeeAddress() {
+			return employee_address;
+		}
+
+		public static void setEmployeeAddress(address1 employee_address) {
+			address1.employee_address= employee_address;
+		}
+
+		@Override
+		public String toString() {
+			return "Employee [EmpId=" + Empid + ", empName=" + getEmployee_name() + "empaddress="+employee_address+"]";
+		}
+
+
+	
+
+	}
+
+

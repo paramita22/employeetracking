@@ -1,9 +1,10 @@
 package in.employee_tracking.dao;
 
 import org.hibernate.Session;
+
 import org.hibernate.Transaction;
 
-import in.employee_tracking.Model.Employee;
+import in.employee_tracking.Model.employee1;
 import in.employee_tracking.util.HibernateUtil;
 
 public class EmployeeDaoImpl implements IEmployeeDao {
@@ -12,7 +13,7 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	Session session = HibernateUtil.getSession();
 	
 	@Override
-	public String save(Employee employee) {
+	public String save(employee1 employee) {
 		Transaction transaction = session.beginTransaction();
 		session.save(employee);
 		boolean flag = true;
@@ -28,13 +29,13 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	}
 
 	@Override
-	public Employee findById(Integer Empid) {
-		Employee employee = session.get(Employee.class, Empid);
+	public employee1 findById(Integer Empid) {
+		employee1 employee = session.get(employee1.class, Empid);
 		return employee;
 	}
 
 	@Override
-	public String updateById(Employee employee) {
+	public String updateById(employee1 employee) {
 		Transaction transaction = session.beginTransaction();
 		session.saveOrUpdate(employee);
 		
@@ -53,7 +54,7 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	@Override
 	public String deleteById(Integer sid) {
 		Transaction transaction = session.beginTransaction();
-		Employee employee = findById(sid);
+		employee1 employee = findById(employee1.Empid);
 		
 		if (employee != null) {
 			session.delete(employee);

@@ -3,20 +3,40 @@ package in.employee_tracking.main;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import in.employee_tracking.Model.Employee;
-import in.employee_tracking.Model.Manager;
-import in.employee_tracking.Model.Address;
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import in.employee_tracking.Model.employee1;
+import in.employee_tracking.Model.manager1;
+import in.employee_tracking.Model.address1;
 import in.employee_tracking.controller.IEmployeeController;
 import in.employee_tracking.factory.EmployeeControllerFactory;
+
 
 public class TestApp {
 
 	public static void main(String[] args) {
+		
+		Session session = in.employee_tracking.util.HibernateUtil.getSession();
 		IEmployeeController employeeController = null;
-		String status = null, emp_name = null, project_name = null, street=null, city=null, state=null, country=null, Department_name=null, TimeSheet_begin=null, TimeSheet_end=null;
+		String status = null, employee_name = null, Project_name = null, street=null, city=null, state=null, country=null, Department_name=null;
 		int Empid = 0, zip_code=0, NoIndReport=0;
-		Address address=new Address();
-		Employee employeeRecord = null;
+		Date begin_date=new Date();
+		Date end_date=new Date();
+		address1 address=new address1(Empid);
+		manager1 manager=null;
+		employee1 employeeRecord = null;
+		Transaction transaction = session.beginTransaction();
+		employeeRecord = session.get(employee1.class, 1L);
+		System.out.println(employeeRecord);
+		
+		address=session.get(address1.class, 1L);
+		System.out.println(address);
+
+		manager=session.get(manager1.class, 1L);
+		System.out.println(manager);
 
 		try {
 			while (true) {
@@ -32,13 +52,14 @@ public class TestApp {
 
 				employeeController = EmployeeControllerFactory.getEmployeeController();
 
+				String project_name;
 				switch (option) {
 				case 1:
 					System.out.print("Enter the id of Employee:: ");
 					Empid = Integer.parseInt(br.readLine());
 					
 					System.out.print("Enter the name of Employee:: ");
-					emp_name = br.readLine();
+					employee_name = br.readLine();
 
 					System.out.print("Enter the name of project in which the employee is involved:: ");
 					project_name = br.readLine();
@@ -64,17 +85,17 @@ public class TestApp {
 					System.out.println("Enter the number of employees involved in the project of the Employee mentioned:");
 					NoIndReport=Integer.parseInt(br.readLine());
 					
-					System.out.println("Enter the date-time the project begins");
-					TimeSheet_begin=br.readLine();
-					
-					System.out.println("Enter the date of completion scheduled:");
-					TimeSheet_end=br.readLine();
+					System.out.print("Enter the TimeSheet begin date of project of Employee:: "+br.read());
 				
 					
-					Employee employee = new Employee(Empid, emp_name, project_name, address);
+					System.out.println("Enter the Timesheet end date of project of employee:"+br.read());
+				
+					
+					
+					employee1 employee = new employee1(Empid, employee_name, project_name, address);
 					employee.setEmpid(Empid);
-					employee.setEmployeeName(emp_name);
-					employee.setProjectName(project_name);
+					employee.setEmployee_name(employee_name);
+					employee.setProject_name(project_name);
 					
 					address.setEmpid(Empid);
 					address.setZip_code(zip_code);
@@ -83,24 +104,33 @@ public class TestApp {
 					address.setState(state);
 					address.setCountry(country);
 					
-					employee.setEmployeeAddress(address);
+					employee1.setEmployeeAddress(address);
 					
-					Manager manager=new Manager();
-					manager.setEmpid(Empid);
-					manager.setProjectName(project_name);
-					manager.setDepartment_name(Department_name);
-					manager.setNoIndReport(NoIndReport);
-					manager.setTimesheet_begin(TimeSheet_begin);
-					manager.setTimesheet_end(TimeSheet_end);
+					manager1 Newmanager=new manager1(Empid, Project_name, Department_name, address);
+					Newmanager.setEmpid(Empid);
+					Newmanager.setProject_name(project_name);
+					Newmanager.setDepartment_name(Department_name);
+					Newmanager.setNoIndReport(NoIndReport);
+					Newmanager.setTimesheet_begin(begin_date);
+					Newmanager.setTimesheet_end(end_date);
 
-					status =employeeController.save(employee);
-					if (status.equalsIgnoreCase("success")) {
-						System.out.println("Record inserted succesfully...");
-					} else if (status.equalsIgnoreCase("failure")) {
-						System.out.println("Record insertion failed...");
-					} else {
-						System.out.println("Some problem occured...");
-					}
+					status =employeeController.save(employee);	
+
+						if (status.equalsIgnoreCase("success")) {
+							System.out.println("Record inserted succesfully...");
+							transaction.commit();
+							System.out.println("Object updated...");
+
+						} else if (status.equalsIgnoreCase("failure")) {
+							System.out.println("Record insertion failed...");
+							transaction.rollback();
+							System.out.println("Object not updated...");
+							
+						} else {
+							System.out.println("Some problem occured...");
+						}
+						in.employee_tracking.util.HibernateUtil.closeSession(session);
+					
 					break;
 				case 2:
 					System.out.print("Enter the id:: ");
@@ -121,12 +151,12 @@ public class TestApp {
 					if (employeeRecord != null) {
 						employeeRecord.setEmpid(Empid);
 
-						System.out.print("EmployeetName ::[Old Name is :: " + employeeRecord.getEmployeeName() + "]:  ");
+						System.out.print("EmployeetName ::[Old Name is :: " + employee1.getEmployee_name() + "]:  ");
 						String newName = br.readLine();
 						if (newName == null || newName.equals("")) {
-							employeeRecord.setEmployeeName(employeeRecord.getEmployeeName());
+							employeeRecord.setEmployee_name(employee1.getEmployee_name());
 						} else {
-							employeeRecord.setEmployeeName(newName);
+							employeeRecord.setEmployee_name(newName);
 						}
 
 						System.out.println(employeeRecord);
@@ -134,8 +164,11 @@ public class TestApp {
 						status = employeeController.updateById(employeeRecord);
 						if (status.equalsIgnoreCase("success")) {
 							System.out.println("Record updated succesfully...");
+
+							
 						} else if (status.equalsIgnoreCase("failure")) {
 							System.out.println("Record updation failed...");
+							
 						} else {
 							System.out.println("Some problem occured...");
 						}
@@ -150,6 +183,7 @@ public class TestApp {
 					status = employeeController.deleteById(Empid);
 					if (status.equalsIgnoreCase("success")) {
 						System.out.println("Record deleted succesfully...");
+					
 					} else if (status.equalsIgnoreCase("failure")) {
 						System.out.println("Record deletion failed...");
 					} else {
@@ -170,7 +204,23 @@ public class TestApp {
 			e.printStackTrace();
 		}
 
+		finally {
+			if (status.equalsIgnoreCase("success")) {
+				System.out.println("Record inserted succesfully...");
+				transaction.commit();
+				System.out.println("Object updated...");
+
+			} else if (status.equalsIgnoreCase("failure")) {
+				System.out.println("Record insertion failed...");
+				transaction.rollback();
+				System.out.println("Object not updated...");
+				
+			} else {
+				System.out.println("Some problem occured...");
+			}
+			in.employee_tracking.util.HibernateUtil.closeSession(session);
 
 	}
 
+}
 }

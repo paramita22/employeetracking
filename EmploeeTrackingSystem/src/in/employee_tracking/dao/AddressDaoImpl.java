@@ -2,11 +2,13 @@ package in.employee_tracking.dao;
 
 import java.io.Serializable;
 
+
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import in.employee_tracking.Model.Address;
-import in.employee_tracking.Model.Employee;
+import in.employee_tracking.Model.address1;
+import in.employee_tracking.Model.employee1;
 import in.employee_tracking.util.HibernateUtil;
 
 public class AddressDaoImpl implements IAddressDao{
@@ -14,14 +16,14 @@ public class AddressDaoImpl implements IAddressDao{
 Session session = HibernateUtil.getSession();
 Serializable Empid;
 Serializable zip_code;
-Employee address;
-Employee employee;
+address1 address;
+employee1 employee;
 
 
 	@Override
-	public String save(Employee employee) {
+	public String save(address1 address) {
 	Transaction transaction = session.beginTransaction();
-	session.save(employee);
+	session.save(address);
 	boolean flag = true;
 	String status = null;
 	if (flag) {
@@ -36,9 +38,9 @@ Employee employee;
 
 	
 	@Override
-	public String save1(Address address) {
+	public String save1(address1 address1) {
 		Transaction transaction = session.beginTransaction();
-		session.save(address);
+		session.save(address1);
 		boolean flag = true;
 		String status = null;
 		if (flag) {
@@ -52,8 +54,8 @@ Employee employee;
 	}
 
 	@Override
-	public Employee findById(Integer Empid) {
-		address = session.get(Employee.class, zip_code);
+	public address1 findById(Integer Empid) {
+		address = session.get(address1.class, zip_code);
 		return address;
 	}
 
@@ -77,7 +79,7 @@ Employee employee;
 	@Override
 	public String deleteById(Integer Empid) {
 		Transaction transaction = session.beginTransaction();
-		Employee employee = findById(Empid);
+	 address = findById(employee1.Empid);
 		
 		if (employee != null) {
 			session.delete(employee);

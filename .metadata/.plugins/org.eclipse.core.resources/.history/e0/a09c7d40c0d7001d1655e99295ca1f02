@@ -1,0 +1,34 @@
+package in.employee_tracking.service;
+
+import in.employee_tracking.Model.Employee;
+import in.employee_tracking.dao.IEmployeeDao;
+import in.employee_tracking.factory.EmployeeDaoFactory;
+
+public class EmployeeServiceImpl implements IEmployeeService {
+	
+	IEmployeeDao empDao;
+
+	@Override
+	public Employee findById(Integer Empid) {
+		empDao = EmployeeDaoFactory.getEmployeeDao();
+		return empDao.findById(Empid);	
+	}
+
+	@Override
+	public String deleteById(Integer Empid) {
+		empDao = EmployeeDaoFactory.getEmployeeDao();
+		return empDao.deleteById(Empid);	}
+
+	@Override
+	public String updateById(Employee employee) {
+		empDao = EmployeeDaoFactory.getEmployeeDao();
+		return empDao.updateById(employee);
+	}
+
+	@Override
+	public String save(Employee employee) {
+		empDao = EmployeeDaoFactory.getEmployeeDao();
+		return empDao.save(employee);
+	}
+
+}

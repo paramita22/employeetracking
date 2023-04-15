@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
 
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.username">root</property>
@@ -14,7 +14,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
-   		<mapping class="in/employee_tracking/mapping/Employee.hbm.xml"/>
+        <mapping resource="in/employee_tracking/mapping/address1.hbm.xml"/>
+   		<mapping resource="in/employee_tracking/mapping/employee1.hbm.xml"/>
+   		<mapping resource="in/employee_tracking/mapping/manager1.hbm.xml"/>
  	
     </session-factory>
 </hibernate-configuration>

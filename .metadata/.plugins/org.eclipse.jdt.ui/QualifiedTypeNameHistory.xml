@@ -6,8 +6,6 @@
     <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
     <fullyQualifiedTypeName name="in.employee.Model.Employee"/>
     <fullyQualifiedTypeName name="org.hibernate.Session"/>
-    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
-    <fullyQualifiedTypeName name="javax.persistence.Id"/>
     <fullyQualifiedTypeName name="in.employee_tracking.factory.EmployeeServiceFactory"/>
     <fullyQualifiedTypeName name="in.employee_tracking.factory.EmployeeDaoFactory"/>
     <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
@@ -36,4 +34,11 @@
     <fullyQualifiedTypeName name="in.employee_tracking.Model.Address"/>
     <fullyQualifiedTypeName name="in.employee_tracking.controller.IAddressController"/>
     <fullyQualifiedTypeName name="in.employee_tracking.controller.AddressControllerImpl"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="in.employee_tracking.Model.employee1"/>
+    <fullyQualifiedTypeName name="javax.persistence.EmbeddedId"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

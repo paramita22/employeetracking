@@ -1,0 +1,63 @@
+package in.employee_tracking.Model;
+
+public class employee1{
+
+	public static int Empid;
+
+protected
+tring employeeprotected static S
+mployee_address;
+
+		static
+s is loading...");
+		}
+
+		pu String project_name, Address address) {
+			System.out.println("Creating Console App with Hibernate");
+		}
+
+		public Integer getEmpid() {
+			return Empid;
+		}
+
+		public void setEmpid(Integer Empid) {
+			employee.Empid = Empid;
+			System.out.println("Employee.setEmpid()");
+		}
+
+		public String getEmployeeName() {
+			return employee_name;
+		}
+
+		public void setEmployeeName(String employee_name) {
+			employee.employee_name = employee_name;
+			System.out.println("Employee.setEmployeeName()");
+		}
+		
+		public String getProjectName() {
+			return project_name;
+		}
+
+		public void setProjectName(String project_name) {
+			employee.project_name = project_name;
+			System.out.println("Employee.setProjectName()");
+		}
+		
+		
+		public Address getEmployeeAddress() {
+			return employee_address;
+		}
+
+		public void setEmployeeAddress(Address employee_address) {
+			employee.employee_address= employee_address;
+			System.out.println("Employee.setEmpAddress()");
+		}
+
+		@Override
+		public String toString() {
+			return "Employee [EmpId=" + Empid + ", empName=" + employee_name + "empaddress="+employee_address+"]";
+		}
+
+	}
+
+

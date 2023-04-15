@@ -1,0 +1,16 @@
+package in.employee_tracking.service;
+	
+import in.employee_tracking.Model.address;
+
+
+	public interface IAddressService {
+
+		String findById(Integer Empid);
+
+		String deleteById(Integer Empid);
+
+		String updateById(Integer Empid);
+
+		String save1(address address);
+
+	}

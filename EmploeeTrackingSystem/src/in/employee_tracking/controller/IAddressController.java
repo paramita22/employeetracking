@@ -1,11 +1,11 @@
 package in.employee_tracking.controller;
 
-import in.employee_tracking.Model.Address;
+import in.employee_tracking.Model.address1;
 
 
 public interface IAddressController {
 
-	String save1(Address address);// Creating a record
+	String save1(address1 address1);// Creating a record
 
 	String findById(Integer Empid);// Reading a record
 

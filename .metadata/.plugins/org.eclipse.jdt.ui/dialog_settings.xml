@@ -9,7 +9,7 @@
 		<item key="pageIndex" value="2"/>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
-		<item key="index" value="8"/>
+		<item key="index" value="3"/>
 	</section>
 	<section name="NewPackageWizardPage">
 		<item key="create_package_info_java" value="false"/>
@@ -31,9 +31,11 @@
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item key="renameSubpackages" value="false"/>
-		<item key="updateTextualMatches" value="false"/>
+		<item key="updateTextualMatches" value="true"/>
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
+		<item key="updateSimilarElements" value="true"/>
+		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 	</section>
 	<section name="SourceActionDialog.methods">
 		<item key="VisibilityModifier" value="1"/>
@@ -78,5 +80,8 @@
 		<item key="expanded6" value="false"/>
 		<item key="expanded7" value="false"/>
 		<item key="expanded8" value="true"/>
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item key="GenerateJavadoc" value="false"/>
 	</section>
 </section>

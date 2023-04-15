@@ -1,6 +1,6 @@
 package in.employee_tracking.service;
 
-import in.employee_tracking.Model.Address;
+import in.employee_tracking.Model.address1;
 import in.employee_tracking.dao.IAddressDao;
 import in.employee_tracking.factory.AddressDaoFactory;
 
@@ -20,9 +20,9 @@ import in.employee_tracking.factory.AddressDaoFactory;
 		}
 
 		@Override
-		public String save1(Address address) {
+		public String save1(address1 address1) {
 			addressDao = AddressDaoFactory.getAddressDao();
-			return addressDao.save1(address);
+			return addressDao.save1(address1);
 		}
 
 		@Override

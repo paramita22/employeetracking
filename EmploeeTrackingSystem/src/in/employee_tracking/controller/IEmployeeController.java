@@ -1,14 +1,14 @@
 package in.employee_tracking.controller;
 
-import in.employee_tracking.Model.Employee;
+import in.employee_tracking.Model.employee1;
 
 public interface IEmployeeController {
 
-		String save(Employee employee);// Creating a record
+		String save(employee1 employee);// Creating a record
 
-		Employee findById(Integer Empid);// Reading a record
+		employee1 findById(Integer Empid);// Reading a record
 
-		String updateById(Employee employeeRecord);// Updating a record
+		String updateById(employee1 employeeRecord);// Updating a record
 
 		String deleteById(Integer Empid);// Deleting a record
 

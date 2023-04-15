@@ -1,0 +1,15 @@
+package in.employee_tracking.service;
+
+import in.employee_tracking.Model.employee1;
+
+public interface IEmployeeService {
+
+	employee findById(Integer empid);
+
+	String deleteById(Integer empid);
+
+	String updateById(employee employee);
+
+	String save(employee employee);
+
+}

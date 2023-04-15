@@ -1,6 +1,6 @@
 package in.employee_tracking.service;
 	
-import in.employee_tracking.Model.Address;
+import in.employee_tracking.Model.address1;
 
 
 	public interface IAddressService {
@@ -11,6 +11,6 @@ import in.employee_tracking.Model.Address;
 
 		String updateById(Integer Empid);
 
-		String save1(Address address);
+		String save1(address1 address1);
 
 	}

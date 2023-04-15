@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;in.ineuron.Model.Employee&apos; to &apos;employee1&apos;&#x0D;&#x0A;- Original project: &apos;HBSynchronizationOperation&apos;&#x0D;&#x0A;- Original element: &apos;in.ineuron.Model.Employee&apos;&#x0D;&#x0A;- Renamed element: &apos;in.ineuron.Model.employee1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Employee&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;in.ineuron.Model{Employee.java[Employee" matchStrategy="1" name="employee1" qualified="false" references="true" similarDeclarations="false" stamp="1681145032222" textual="false" version="1.0"/>
+</session>

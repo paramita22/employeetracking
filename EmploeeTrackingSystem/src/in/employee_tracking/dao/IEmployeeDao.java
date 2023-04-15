@@ -1,16 +1,16 @@
 package in.employee_tracking.dao;
 
-import in.employee_tracking.Model.Employee;
+import in.employee_tracking.Model.employee1;
 
 public interface IEmployeeDao {
 
 	String deleteById(Integer Empid);
 
-	String updateById(Employee employee);
+	String updateById(employee1 employee);
 
-	Employee findById(Integer Empiod);
+	employee1 findById(Integer Empiod);
 
-	String save(Employee employee);
+	String save(employee1 employee);
 
 	
 

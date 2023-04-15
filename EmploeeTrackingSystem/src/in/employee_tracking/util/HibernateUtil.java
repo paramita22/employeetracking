@@ -10,7 +10,7 @@ public class HibernateUtil {
 
 	static Configuration cfg = null;
 	static SessionFactory sessionFactory = null;
-	static Session session = null;
+	static Session session;
 	static {
 		try {
 			cfg = new Configuration();
@@ -29,7 +29,6 @@ public class HibernateUtil {
 		return session;
 	}
 
-	@SuppressWarnings("null")
 	public static void closeSession(Session session) {
 		if (session == null) {
 			session.close();

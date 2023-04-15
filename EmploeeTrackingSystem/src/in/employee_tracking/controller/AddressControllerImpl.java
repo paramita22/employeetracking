@@ -1,21 +1,17 @@
 package in.employee_tracking.controller;
 
-import org.hibernate.service.Service;
-
-import in.employee_tracking.Model.Address;
-import in.employee_tracking.Model.Employee;
+import in.employee_tracking.Model.address1;
 import in.employee_tracking.factory.AddressServiceFactory;
-import in.employee_tracking.factory.EmployeeServiceFactory;
 import in.employee_tracking.service.IAddressService;
-import in.employee_tracking.service.IEmployeeService;
+
 
 public class AddressControllerImpl implements IAddressController{
 
 	IAddressService addressService;
 
-	public String save1(Address address) {
+	public String save1(address1 address1) {
 		addressService = AddressServiceFactory.getAddressService();
-		return addressService.save1(address);
+		return addressService.save1(address1);
 	}
 
 	@Override

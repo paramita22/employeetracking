@@ -1,18 +1,19 @@
 package in.employee_tracking.dao;
 
-import in.employee_tracking.Model.Address;
-import in.employee_tracking.Model.Employee;
+import in.employee_tracking.Model.address1;
+
+
 
 public interface IAddressDao {
 
 	public String deleteById(Integer Empid);
 
-	public Employee findById(Integer Empid);
+	public address1 findById(Integer Empid);
 
 	public String updateById(Integer Empid);
 
-	public String save1(Address address);
+	public String save1(address1 address1);
 
-	String save(Employee employee);
+	String save(address1 address);
 
 }

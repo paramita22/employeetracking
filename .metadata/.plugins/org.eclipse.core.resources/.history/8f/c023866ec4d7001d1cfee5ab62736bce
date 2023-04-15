@@ -1,0 +1,73 @@
+package in.employee_tracking.Model;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class employee1{
+
+	@Id
+	@Column
+	public static int Empid;
+	
+	@Column
+	private static String employee_name;
+	
+	@Column
+	private static String project_name;
+	
+	@Column
+	static address1 employee_address=new address1();
+
+	static {
+		System.out.println("Employee.class is loading...");
+	}
+
+	public employee1(int Empid, String employee_name, String project_name) {
+		System.out.println("Zero parameter consturctor is used by Hibernate....");
+	}
+
+		public Integer getEmpid() {
+			return Empid;
+		}
+
+		public void setEmpid(Integer Empid) {
+			employee1.Empid = Empid;
+			System.out.println("Employee.setEmpid()");
+		}
+
+		public String getEmployeeName() {
+			return employee_name;
+		}
+
+		public void setEmployeeName(String employee_name) {
+			employee1.employee_name = employee_name;
+			System.out.println("Employee.setEmployeeName()");
+		}
+		
+		public String getProjectName() {
+			return project_name;
+		}
+
+		public void setProjectName(String project_name) {
+			employee1.project_name = project_name;
+			System.out.println("Employee.setProjectName()");
+		}
+		
+		
+		public address1 getEmployeeAddress() {
+			return employee_address;
+		}
+
+		public void setEmployee(address1 employee_address) {
+			employee1.employee_address= employee_address;
+			System.out.println("Employee.setEmpAddress()");
+		}
+
+		@Override
+		public String toString() {
+			return "Employee [EmpId=" + Empid + ", empName=" + employee_name + "empaddress="+employee_address+"]";
+		}
+
+	}
+
+

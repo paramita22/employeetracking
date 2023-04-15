@@ -1,2 +1,13 @@
 1681025747118	Delete elements
 1681034286615	Rename compilation unit 'AddressService.java'
+1681145623679	Rename type 'Employee'
+1681145685434	Rename type 'Address'
+1681146159160	Rename type 'address'
+1681146244624	Rename type 'Manager'
+1681146294248	Rename compilation unit 'employee.java'
+1681146395549	Rename type 'Manager1'
+1681147891193	Rename resource 'Employee.hbm.xml'
+1681147916989	Rename resource 'Manager.hbm.xml'
+1681147936262	Rename resource 'Address.hbm.xml'
+1681200475554	Encapsulate field 'employee_name'
+1681200757207	Encapsulate field 'Project_name'

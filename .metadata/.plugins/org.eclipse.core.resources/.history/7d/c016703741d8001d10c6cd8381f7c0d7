@@ -1,0 +1,147 @@
+package in.employee_tracking.Model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
+public class manager1 extends employee1{
+
+
+
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+
+		public manager1(Integer Empid,String Project_name,String Department_name,address1 employee_address){
+			super(Empid, getEmployee_name(),getProject_name(), employee_address);
+			System.out.println("Manager class is Loading...");
+		}
+
+
+
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		@Column
+		public static Integer Empid;
+		
+		@Column
+		private static String Project_name;
+		
+		@Column
+		private String Department_name;
+		
+		@Column
+		private int NoIndReport;
+		
+		@Column
+		private LocalDate Timesheet_begin;
+		
+		@Column
+		private LocalDate Timesheet_end;
+
+
+		public static Integer getEmpid() {
+			return Empid;
+		}
+
+		public void setEmpid(Integer Empid) {
+			employee1.Empid = Empid;
+		}
+
+
+		public String getProject_name() {
+			return Project_name;
+		}
+
+
+
+
+
+		public void setProject_name(String Project_name) {
+			employee1.setProject_name=Project_name;
+		}
+
+
+
+
+
+		public String getDepartment_name() {
+			return Department_name;
+		}
+
+
+
+
+
+		public void setDepartment_name(String Department_name) {
+			this.Department_name = Department_name;
+		}
+
+
+
+
+
+		public int getNoIndReport() {
+			return NoIndReport;
+		}
+
+
+
+
+
+		public void setNoIndReport(int noIndReport) {
+			this.NoIndReport = noIndReport;
+		}
+
+
+
+
+
+		public LocalDate getTimesheet_begin() {
+			return Timesheet_begin;
+		}
+
+
+
+
+
+		public void setTimesheet_begin(LocalDate Timesheet_begin) {
+			this.Timesheet_begin = Timesheet_begin;
+		}
+
+
+
+
+
+		public LocalDate getTimesheet_end() {
+			return Timesheet_end;
+		}
+
+
+
+
+
+		public void setTimesheet_end(LocalDate timesheet_end) {
+			this.Timesheet_end = timesheet_end;
+		}
+
+
+
+
+
+		@Override
+		public String toString() {
+			return "manager1 [Project_name=" + Project_name + ", Department_name=" + Department_name + ", NoIndReport=" +NoIndReport + ", Timesheet_begin=" + Timesheet_begin + ", Timesheet_end=" +Timesheet_end+"]";
+		}
+
+	}
+
